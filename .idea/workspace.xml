@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d3b097-7e84-4662-ac6d-0ccb5ab0bf34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/controller/BlogPostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/service/BlogPostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    <list default="true" id="78d3b097-7e84-4662-ac6d-0ccb5ab0bf34" name="Changes" comment="image upload">
       <change beforePath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/controller/PostViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/controller/PostViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/soft/rodi38/jekyllmate/post-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/soft/rodi38/jekyllmate/post-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +50,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/javafx-sdk-17.0.11/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rodrigo/Projects/jekyllmate&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -101,12 +94,43 @@
       <workItem from="1715274728059" duration="3440000" />
       <workItem from="1715284904418" duration="1079000" />
       <workItem from="1715301665846" duration="5443000" />
-      <workItem from="1715320266216" duration="749000" />
+      <workItem from="1715320266216" duration="1081000" />
+      <workItem from="1715364637455" duration="164000" />
+      <workItem from="1715400697621" duration="2604000" />
+      <workItem from="1715450499152" duration="920000" />
+      <workItem from="1715451434645" duration="2323000" />
+      <workItem from="1715454236756" duration="1187000" />
+      <workItem from="1715455435489" duration="622000" />
+      <workItem from="1715467668377" duration="201000" />
+      <workItem from="1715469579834" duration="1738000" />
+      <workItem from="1715476235911" duration="3537000" />
     </task>
+    <task id="LOCAL-00001" summary="blogpost impl">
+      <option name="closed" value="true" />
+      <created>1715321081014</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715321081014</updated>
+    </task>
+    <task id="LOCAL-00002" summary="image upload">
+      <option name="closed" value="true" />
+      <created>1715479395527</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715479395527</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="blogpost impl" />
+    <MESSAGE value="image upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="image upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
