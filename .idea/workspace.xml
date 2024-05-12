@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d3b097-7e84-4662-ac6d-0ccb5ab0bf34" name="Changes" comment="image upload">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/service/BlogPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/soft/rodi38/jekyllmate/service/BlogPostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/17.0.6/javafx-graphics-17.0.6-sources.jar!/javafx/application/Application.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -103,7 +108,9 @@
       <workItem from="1715455435489" duration="622000" />
       <workItem from="1715467668377" duration="201000" />
       <workItem from="1715469579834" duration="1738000" />
-      <workItem from="1715476235911" duration="3537000" />
+      <workItem from="1715476235911" duration="5035000" />
+      <workItem from="1715482509241" duration="603000" />
+      <workItem from="1715532429743" duration="4696000" />
     </task>
     <task id="LOCAL-00001" summary="blogpost impl">
       <option name="closed" value="true" />
@@ -121,11 +128,30 @@
       <option name="project" value="LOCAL" />
       <updated>1715479395527</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="image upload">
+      <option name="closed" value="true" />
+      <created>1715479900690</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715479900690</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="blogpost impl" />

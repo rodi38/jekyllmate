@@ -14,6 +14,7 @@ import soft.rodi38.jekyllmate.service.BlogPostService;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
@@ -54,31 +55,16 @@ public class Main extends Application {
 
         Button optionsButton = new Button("Opções");
 
+        Button uploadButton = getUpload(primaryStage, contentArea);
 
+        Button selectDirectoryButton = getDirectory(primaryStage);
 
         optionsButton.setOnAction(e -> {
             Dialog<Void> dialog = new Dialog<>();
             dialog.setTitle("Opções");
 
-            Button uploadButton = getButton(primaryStage, contentArea);
-
-            Button selectDirectoryButton = new Button("Selecionar Diretório");
-            selectDirectoryButton.setOnAction(event -> {
-                DirectoryChooser directoryChooser = new DirectoryChooser();
-                selectedDirectory = directoryChooser.showDialog(primaryStage);
-
-                if (selectedDirectory != null) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Diretório selecionado");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Você selecionou o diretório: " + selectedDirectory.getAbsolutePath());
-                    alert.showAndWait();
-                }
-            });
-
-            dialog.getDialogPane().setContent(new VBox(uploadButton, selectDirectoryButton));
+            dialog.getDialogPane().setContent(new VBox(uploadButton));
             dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-
             dialog.showAndWait();
         });
 
@@ -95,36 +81,59 @@ public class Main extends Application {
             contentArea.clear();
         });
 
-        vbox.getChildren().addAll(titleField, categoryField, contentArea, optionsButton, submitButton);
+        vbox.getChildren().addAll(selectDirectoryButton, titleField, categoryField, contentArea, optionsButton, submitButton);
 
         Scene scene = new Scene(vbox, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    private Button getButton(Stage primaryStage, TextArea contentArea) {
+    private Button getDirectory(Stage primaryStage) {
+        Button selectDirectoryButton = new Button("Selecionar Diretório do Blog");
+
+        selectDirectoryButton.setOnAction(event -> {
+            DirectoryChooser directoryChooser = new DirectoryChooser();
+            selectedDirectory = directoryChooser.showDialog(primaryStage);
+            if (Files.notExists(Path.of(selectedDirectory.getAbsolutePath() + "\\assets"))) {
+                try {
+                    Files.createDirectory(Path.of(selectedDirectory.getAbsolutePath() + "\\assets"));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+            if (selectedDirectory != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Atenção!!");
+                alert.setHeaderText(null);
+                alert.setContentText("Tenha certeza que o diretório selecionado seja exatamente o diretório RAIZ do seu repositório no github \n diretório selecionado: " + selectedDirectory.getAbsolutePath());
+                alert.showAndWait();
+            }
+        });
+        return selectDirectoryButton;
+    }
+
+    private Button getUpload(Stage primaryStage, TextArea contentArea) {
         Button uploadButton = new Button("Upload de Imagem");
         uploadButton.setOnAction(event -> {
             if (selectedDirectory == null) {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Diretório não selecionado");
                 alert.setHeaderText(null);
-                alert.setContentText("Por favor, selecione um diretório antes de fazer o upload de uma imagem.");
+                alert.setContentText("Por favor, selecione o diretório do repositório do seu blog antes de fazer o upload de uma imagem.");
                 alert.showAndWait();
                 return;
             }
-
             FileChooser fileChooser = new FileChooser();
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
             var selectedFile = fileChooser.showOpenDialog(primaryStage);
 
             if (selectedFile != null) {
                 String sourcePath = selectedFile.getAbsolutePath();
-                String targetPath = selectedDirectory.getAbsolutePath() + "/" + selectedFile.getName();
+                String targetPath = selectedDirectory.getAbsolutePath() + "\\assets\\" + selectedFile.getName();
 
                 try {
                     Files.copy(Paths.get(sourcePath), Paths.get(targetPath), StandardCopyOption.REPLACE_EXISTING);
-                    contentArea.appendText("![image alt text](" + targetPath + ")\n");
+                    contentArea.appendText("![image alt text](/assets/" + selectedFile.getName() + ")\n");
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }

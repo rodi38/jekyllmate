@@ -19,12 +19,9 @@ public class BlogPostService {
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String filename = date + "-" + title.replace(" ", "-") + ".markdown";
 
-
         if (content == null) {
             return;
         }
-
-
         System.out.println(POSTS_DIRECTORY);
 
         try {
@@ -44,7 +41,6 @@ public class BlogPostService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 }
