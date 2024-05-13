@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import soft.rodi38.jekyllmate.server.OAuth2Server;
 import soft.rodi38.jekyllmate.service.BlogPostService;
 
 import java.io.File;
@@ -86,6 +87,13 @@ public class Main extends Application {
         Scene scene = new Scene(vbox, 300, 250);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        try {
+            OAuth2Server server = new OAuth2Server();
+            server.startServer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private Button getDirectory(Stage primaryStage) {
@@ -111,7 +119,6 @@ public class Main extends Application {
         });
         return selectDirectoryButton;
     }
-
     private Button getUpload(Stage primaryStage, TextArea contentArea) {
         Button uploadButton = new Button("Upload de Imagem");
         uploadButton.setOnAction(event -> {
